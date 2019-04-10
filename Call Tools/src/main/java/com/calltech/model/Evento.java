@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="evento")
 public class Evento implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
