@@ -1,21 +1,17 @@
 package com.calltech.demo;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-import com.calltech.hibernate.HibernateUtil;
+import com.calltech.controller.EventoController;
+import com.calltech.repository.EventoRepository;
 
 @SpringBootApplication
-@EnableAutoConfiguration
-@ComponentScan({"com.calltech.controller"})    
-
+@ComponentScan({"com.calltech.controller"})
+@ComponentScan(basePackageClasses= {EventoController.class,EventoRepository.class})
 public class DemoApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-		new HibernateUtil().getSession().beginTransaction().begin();
 	}
-
 }

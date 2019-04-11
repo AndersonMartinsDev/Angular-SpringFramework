@@ -16,7 +16,7 @@ public class DataConfiguration {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql//localhost:3366/callTechuseTimezone=true&serverTimezone=GMT&useSSL=false");
+		dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/callTech?useTimezone=true&serverTimezone=GMT");
 		dataSource.setUsername("root");
 		dataSource.setPassword("1234");
 		return dataSource; 
@@ -27,7 +27,7 @@ public class DataConfiguration {
 		adapter.setDatabase(Database.MYSQL);
 		adapter.setShowSql(true);
 		adapter.setGenerateDdl(true);
-		adapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect");
+		adapter.setDatabasePlatform("org.hibernate.dialect.MySQLDialect");
 		adapter.setPrepareConnection(true);
 		return adapter;
 	}
