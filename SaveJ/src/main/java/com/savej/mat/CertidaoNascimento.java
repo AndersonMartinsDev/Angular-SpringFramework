@@ -51,11 +51,9 @@ public class CertidaoNascimento {
 		public void setLivro(String livro) {
 			this.livro = livro;
 		}
-
 		public String getCidadeRegistro() {
 			return cidadeRegistro;
 		}
-
 		public void setCidadeRegistro(String cidadeRegistro) {
 			this.cidadeRegistro = cidadeRegistro;
 		}
