@@ -11,25 +11,29 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 @Configuration
 public class DataConfiguration {
-	
+	static final String URL = "jdbc:mysql://127.0.0.1:3306/calltech2?useSSL=false"; // incica o caminho do banco de dados
+	static final String USER = "root"; // aqui vai o nome usuario que vc quer acessar
+	static final String PASS = "1234"; // aqui a senha do seu banco
+
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/callTech?useTimezone=true&serverTimezone=GMT");
-		dataSource.setUsername("root");
-		dataSource.setPassword("1234");
-		return dataSource; 
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl(URL);
+		dataSource.setUsername(USER);
+		dataSource.setPassword(PASS);
+		return dataSource;
+
 	}
+
 	@Bean
 	public JpaVendorAdapter jpaVendorAdapter() {
-		HibernateJpaVendorAdapter adapter = new  HibernateJpaVendorAdapter();
+		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
 		adapter.setDatabase(Database.MYSQL);
 		adapter.setShowSql(true);
 		adapter.setGenerateDdl(true);
-		adapter.setDatabasePlatform("org.hibernate.dialect.MySQLDialect");
+		adapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect");
 		adapter.setPrepareConnection(true);
 		return adapter;
 	}
-
 }
