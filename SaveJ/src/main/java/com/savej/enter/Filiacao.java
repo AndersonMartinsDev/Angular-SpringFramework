@@ -1,4 +1,4 @@
-package com.savej.mat;
+package com.savej.enter;
 
 
 import com.savej.staff.Pessoa;
@@ -16,5 +16,6 @@ public class Filiacao extends Pessoa{
 		setLigacaoFamiliar(parentesco);
 	// Ver Questão de multiplos registros N-N
 	}
+	
 
 }

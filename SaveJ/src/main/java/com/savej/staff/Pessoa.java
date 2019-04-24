@@ -1,39 +1,82 @@
 package com.savej.staff;
 
+import java.time.LocalDate;
 
+public class Pessoa {
 
-public abstract class Pessoa {
-
-	protected String nome = "";
-	protected String rg = "";
-	protected String cpf = "";
-	protected String email = "";
-	protected int idade;
-	protected String DataNascimento = null;
-	protected String cidadeNatal = "";
-	protected String ligacaoFamiliar = "";
-	protected int ano;//>>> Ano ESCOLAR - não esquecer -> mesmo que Série
-	protected String sexo;
+	private String nome = "";
+	private String rg = "";
+	private String cpf = "";
+	private String email = "";
+	private int idade;
+	private LocalDate DataNascimento = null;
+	private String cidadeNatal = "";
+	private String ligacaoFamiliar = "";
+	private int ano;//>>> Ano ESCOLAR - não esquecer -> mesmo que Série
+	private String sexo;
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getRg() {
+		return rg;
+	}
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public int getIdade() {
+		return idade;
+	}
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+	public LocalDate getDataNascimento() {
+		return DataNascimento;
+	}
+	public void setDataNascimento(LocalDate dataNascimento) {
+		DataNascimento = dataNascimento;
+	}
+	public String getCidadeNatal() {
+		return cidadeNatal;
+	}
+	public void setCidadeNatal(String cidadeNatal) {
+		this.cidadeNatal = cidadeNatal;
+	}
+	public String getLigacaoFamiliar() {
+		return ligacaoFamiliar;
+	}
+	public void setLigacaoFamiliar(String ligacaoFamiliar) {
+		this.ligacaoFamiliar = ligacaoFamiliar;
+	}
+	public int getAno() {
+		return ano;
+	}
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+	public String getSexo() {
+		return sexo;
+	}
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
 	
 	
-	public abstract int getSexo();
-	public abstract void setSexo(String sexo);
-	public abstract int getAno();
-	public abstract void setAno(int ano);
-	public abstract String getNome();
-	public abstract void setNome(String nome);
-	public abstract String getRg();
-	public abstract void setRg(String rg);
-	public abstract String getCpf();
-	public abstract void setCpf(String cpf);
-	public abstract String getEmail();
-	public abstract void setEmail(String email);
-	public abstract String getDataNascimento();
-	public abstract void setDataNascimento(String dataNascimento);
-	public abstract String getCidadeNatal();
-	public abstract void setCidadeNatal(String cidadeNatal);
-	public abstract String getLigacaoFamiliar();
-	public abstract void setLigacaoFamiliar(String ligacaoFamiliar);
-	public abstract int getIdade();
-	public abstract void setIdade(int idade);
+	
+	
+	
 }

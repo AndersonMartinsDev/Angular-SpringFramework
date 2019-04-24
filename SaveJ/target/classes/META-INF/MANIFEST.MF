@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: SaveJ
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Anderson
+Implementation-Vendor-Id: SaveJ
+Build-Jdk: 1.8.0_201
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/SaveJ
+Created-By: Maven Integration for Eclipse
+
