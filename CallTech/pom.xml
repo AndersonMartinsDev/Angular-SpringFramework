@@ -44,16 +44,22 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 <<<<<<< HEAD:CallTech/pom.xml
+<<<<<<< HEAD:CallTech/pom.xml
+=======
+>>>>>>> 2a97a255d0e6fd7ef4d4a5a4dee734754169f843:CallTech/pom.xml
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
+<<<<<<< HEAD:CallTech/pom.xml
 =======
 	
 			<version>5.1.40</version><!--$NO-MVN-MAN-VER$-->
 			<scope>compile</scope>
 >>>>>>> Hibernate avanço:SaveJ/pom.xml
+=======
+>>>>>>> 2a97a255d0e6fd7ef4d4a5a4dee734754169f843:CallTech/pom.xml
 		</dependency>
 	</dependencies>
 	<build>
