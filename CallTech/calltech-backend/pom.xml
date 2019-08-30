@@ -13,13 +13,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-<<<<<<< HEAD:CallTech/calltech-backend/pom.xml
 		<version>2.1.7.RELEASE</version>
-=======
-		<version>1.5.20.RELEASE</version>
-		<relativePath />
-		<!-- lookup parent from repository -->
->>>>>>> H@:Call Tools/pom.xml
 	</parent>
 
 	<properties>
@@ -29,10 +23,6 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
