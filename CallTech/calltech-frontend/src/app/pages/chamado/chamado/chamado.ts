@@ -1,9 +1,10 @@
-export interface Chamado{
-    id:number,
-    descricao: String,
-    numeroChamado: number,
-    aberto: Date,
-    vencimento:Date,
-    alteracao:Date,
-    fechamento:Date,
+export interface Chamado {
+    id: number;
+    descricao: string;
+    numeroChamado: number;
+    aberto: Date;
+    vencimento: Date;
+    alteracao: Date;
+    fechamento: Date ;
+      
 }

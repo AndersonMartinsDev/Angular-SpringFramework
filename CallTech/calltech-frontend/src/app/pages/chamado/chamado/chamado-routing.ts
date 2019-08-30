@@ -7,9 +7,9 @@ const routes: Routes = [{
     path: '',
     component: ChamadoComponent,
     children: [{
-        path:'chamado',
+        path: 'chamado',
         component: ChamadoComponent,
-    }]
+    }],
 }];
 @NgModule({
     imports: [RouterModule.forChild(routes)],

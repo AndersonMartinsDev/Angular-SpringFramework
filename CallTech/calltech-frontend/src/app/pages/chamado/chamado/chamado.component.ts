@@ -1,22 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Chamado } from './chamado'
+import { Chamado } from './chamado';
 import { ChamadoService } from './chamado.service';
 
 
 @Component({
   selector: 'ngx-chamado',
   templateUrl: './chamado.component.html',
-  providers: [ChamadoService],
-  styleUrls: ['./chamado.component.scss']
+  styleUrls: ['./chamado.component.scss'],
+  providers: [ ChamadoService ],
 })
+
 export class ChamadoComponent implements OnInit {
-  chamados:Chamado[];
-
-  constructor(private chamadoService:ChamadoService) { }
-
+  chamados: Chamado[];
+  constructor(private chamadoService: ChamadoService) { }
   ngOnInit() {
-   this.getCall();
+    this.getCall();
   }
   getCall(): void {
     this.chamadoService.getCallAll()

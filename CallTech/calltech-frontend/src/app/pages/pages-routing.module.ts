@@ -20,8 +20,8 @@ const routes: Routes = [{
       component: DashboardComponent,
     },
     {
-      path:'chamado',
-      component:ChamadoComponent,
+      path: 'chamado',
+      component: ChamadoComponent,
     },
     {
       path: 'layout',
@@ -89,5 +89,4 @@ const routes: Routes = [{
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PagesRoutingModule {
-}
+export class PagesRoutingModule { }
