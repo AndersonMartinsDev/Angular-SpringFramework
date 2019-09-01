@@ -8,7 +8,7 @@ describe('ChamadoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChamadoComponent ]
+      declarations: [ ChamadoComponent ],
     })
     .compileComponents();
   }));

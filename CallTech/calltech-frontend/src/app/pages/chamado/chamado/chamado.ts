@@ -6,5 +6,5 @@ export interface Chamado {
     vencimento: Date;
     alteracao: Date;
     fechamento: Date ;
-      
+
 }
