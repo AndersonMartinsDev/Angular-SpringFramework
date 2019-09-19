@@ -1,0 +1,42 @@
+
+<form
+nz-form
+formGroup="validateForm"
+(ngSubmit)="submitForm()"
+>
+<div nz-row nzGutter="8">
+    <div nz-col nzMd="12" nzSm="6" nzXs="6" nzLg="4">
+        <nz-form-label nzNoCollon="true" nzRequired >Título</nz-form-label>
+        <nz-form-item>
+            <input type="text" nz-input formControlName="name" placeholder="Informe um título descritivo" />
+        </nz-form-item>
+    </div>
+    <div nz-col nzMd="12" nzSm="6" nzXs="6" nzLg="4">
+    <nz-form-item>
+      <nz-form-label nzNoCollon="true" nzRequired >Natureza</nz-form-label>
+      <nz-select ngModel="'Option1'" nzPlaceHolder="Favor informar a natureza" nzRequired="true">
+        <nz-option nzLabel="Erro" [nzValue]="'erro'"></nz-option>
+        <nz-option nzLabel="Duvida" [nzValue]="'Duvida'"></nz-option>
+        <nz-option nzLabel="Implementação" [nzValue]="'implementacao'"></nz-option>
+        <nz-option nzLabel="Análise" [nzValue]="'analise'"></nz-option>
+      </nz-select>
+     </nz-form-item>
+    </div>
+</div>
+<div nz-row nzGutter="8">
+  <div nz-col>
+  <nz-form-item>
+    <nz-form-label nzNoCollon="true" nzRequired>Descrição do Chamado</nz-form-label>
+    <nz-form-control>
+      <textarea
+      nzRequired ="true"
+      nz-input
+      placeholder="Lembre-se! Quanto mais detalhe melhor!"
+      (ngModel)="descricao"
+      [nzAutosize]="{ minRows: 2, maxRows: 6 }"
+    ></textarea>
+    </nz-form-control>
+  </nz-form-item>
+  </div>
+</div>
+</form>

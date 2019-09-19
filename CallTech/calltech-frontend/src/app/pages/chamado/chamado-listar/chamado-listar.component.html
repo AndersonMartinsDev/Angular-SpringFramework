@@ -1,0 +1,62 @@
+<nz-page-header nzTitle="Novo Chamado">
+  <nz-breadcrumb nz-page-header-breadcrumb>
+    <nz-breadcrumb-item>First-level Menu</nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+      <a>Second-level Menu</a>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>Third-level Menu</nz-breadcrumb-item>
+  </nz-breadcrumb>
+</nz-page-header>
+
+<button nz-button nzType="primary" (click)="showModal()">Novo Chamado</button>
+  <nz-table #filterTable [nzData]="listOfDisplayData">
+      <thead (nzSortChange)="sort($event)" nzSingleSort>
+        <tr>
+          <th
+            nzShowSort
+            nzSortKey="name"
+            nzShowFilter
+            [nzFilters]="listOfName"
+            (nzFilterChange)="filter($event, searchAddress)"
+          >
+            Chamado
+          </th>
+          <th nzShowSort nzSortKey="age">Numero</th>
+          <th
+            nzShowSort
+            nzSortKey="address"
+            nzShowFilter
+            [nzFilterMultiple]="false"
+            [nzFilters]="listOfAddress"
+            (nzFilterChange)="filter(listOfSearchName, $event)"
+          >
+            Natureza
+          </th>
+          <th nzShowSort nzSortKey="">Status</th>
+          <th></th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of filterTable.data" (click)="teste()">
+          <td>{{ data.name }}</td>
+          <td>{{ data.age }}</td>
+          <td>{{ data.address }}</td>
+          <td>ANDAMENTO</td>
+          <td><i nz-icon nzType="eye" nzTheme="outline"></i><i nz-icon nzType="rest" nzTheme="twotone"></i></td>
+        </tr>
+      </tbody>
+    </nz-table>
+    <div>
+      <nz-modal
+      nzWidth="600"
+      [(nzVisible)]="isVisible"
+      nzTitle="Novo Chamado"
+      nzOkText="Salvar"
+      nzCancelText="Cancel"
+      (nzOnOk)="handleOk()"
+      (nzOnCancel)="handleCancel()"
+    >
+      <app-chamado-manter></app-chamado-manter>
+    </nz-modal>
+
