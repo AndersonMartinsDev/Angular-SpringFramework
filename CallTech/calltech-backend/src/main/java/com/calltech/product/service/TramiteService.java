@@ -1,4 +1,4 @@
-package com.calltech.product.validation;
+package com.calltech.product.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,11 +6,11 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.calltech.product.entidades.Tramite;
+import com.calltech.product.entity.Tramite;
 import com.calltech.product.repository.TramiteRepository;
 
 @Service
-public class TramiteRegras {
+public class TramiteService {
 
 	@Autowired
 	private TramiteRepository tramiteRepositorio;

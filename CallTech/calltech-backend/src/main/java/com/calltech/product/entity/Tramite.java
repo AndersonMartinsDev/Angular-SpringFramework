@@ -1,4 +1,4 @@
-package com.calltech.product.entidades;
+package com.calltech.product.entity;
 
 import java.time.LocalDate;
 
@@ -28,4 +28,6 @@ public class Tramite {
 	@Column(name="descricao",length=1000)
 	private String descricao;
 	
+	@OneToOne
+	private Chamado chamado;
 }

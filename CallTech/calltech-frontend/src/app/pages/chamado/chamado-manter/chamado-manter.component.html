@@ -4,17 +4,17 @@ nz-form
 formGroup="validateForm"
 (ngSubmit)="submitForm()"
 >
-<div nz-row nzGutter="8">
-    <div nz-col nzMd="12" nzSm="6" nzXs="6" nzLg="4">
+<div nz-row nzGutter="16">
+    <div nz-col [nzMd]="12" [nzSm]="6" [nzXs]="6" [nzLg]="18">
         <nz-form-label nzNoCollon="true" nzRequired >Título</nz-form-label>
         <nz-form-item>
             <input type="text" nz-input formControlName="name" placeholder="Informe um título descritivo" />
         </nz-form-item>
     </div>
-    <div nz-col nzMd="12" nzSm="6" nzXs="6" nzLg="4">
+    <div nz-col [nzMd]="12" [nzSm]="6" [nzXs]="6" [nzLg]="6">
     <nz-form-item>
       <nz-form-label nzNoCollon="true" nzRequired >Natureza</nz-form-label>
-      <nz-select ngModel="'Option1'" nzPlaceHolder="Favor informar a natureza" nzRequired="true">
+      <nz-select ngModel="'Option1'" nzPlaceHolder="Natureza" nzRequired="true">
         <nz-option nzLabel="Erro" [nzValue]="'erro'"></nz-option>
         <nz-option nzLabel="Duvida" [nzValue]="'Duvida'"></nz-option>
         <nz-option nzLabel="Implementação" [nzValue]="'implementacao'"></nz-option>

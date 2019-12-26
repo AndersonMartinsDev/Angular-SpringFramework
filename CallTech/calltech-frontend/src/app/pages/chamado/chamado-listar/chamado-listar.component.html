@@ -9,8 +9,9 @@
 </nz-page-header>
 
 <button nz-button nzType="primary" (click)="showModal()">Novo Chamado</button>
-  <nz-table #filterTable [nzData]="listOfDisplayData">
-      <thead (nzSortChange)="sort($event)" nzSingleSort>
+<button nz-button nzType="primary" (click)="listar()">TESTE</button>
+  <nz-table #filterTable [nzData]="lista">
+      <thead nzSingleSort>
         <tr>
           <th
             nzShowSort
@@ -19,7 +20,7 @@
             [nzFilters]="listOfName"
             (nzFilterChange)="filter($event, searchAddress)"
           >
-            Chamado
+            Título
           </th>
           <th nzShowSort nzSortKey="age">Numero</th>
           <th
@@ -27,7 +28,7 @@
             nzSortKey="address"
             nzShowFilter
             [nzFilterMultiple]="false"
-            [nzFilters]="listOfAddress"
+            [nzFilters]="lista"
             (nzFilterChange)="filter(listOfSearchName, $event)"
           >
             Natureza
@@ -38,11 +39,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let data of filterTable.data" (click)="teste()">
-          <td>{{ data.name }}</td>
-          <td>{{ data.age }}</td>
-          <td>{{ data.address }}</td>
-          <td>ANDAMENTO</td>
+        <tr *ngFor="let data of this.lista" (click)="showModVisu()">
+          <td>{{ data.descricao }}</td>
+          <td>{{ data.numeroChamado }}</td>
+          <td>{{ data.codChamado }}</td>
+          <td>AJUSTE</td>
           <td><i nz-icon nzType="eye" nzTheme="outline"></i><i nz-icon nzType="rest" nzTheme="twotone"></i></td>
         </tr>
       </tbody>
@@ -58,5 +59,16 @@
       (nzOnCancel)="handleCancel()"
     >
       <app-chamado-manter></app-chamado-manter>
+    </nz-modal>
+      <nz-modal
+      nzWidth="800"
+      [(nzVisible)]="isVisibled"
+      nzTitle="Visualizar Chamado"
+      nzOkText="Salvar"
+      nzCancelText="Cancel"
+      (nzOnOk)="handleOkVisu()"
+      (nzOnCancel)="handleCancelVisu()"
+    >
+      <app-chamado-visualizar></app-chamado-visualizar>
     </nz-modal>
 

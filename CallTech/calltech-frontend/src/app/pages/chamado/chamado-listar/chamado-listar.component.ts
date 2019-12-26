@@ -1,13 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd';
+import { ChamadoService } from '../chamado.service';
+import { Chamado } from 'src/app/util/interface/chamado';
+import { RequestService } from 'src/app/util/services/request-component';
 
 @Component({
   selector: 'app-chamado-listar',
-  templateUrl: './chamado-listar.component.html'
+  templateUrl: './chamado-listar.component.html',
+  providers: [ChamadoService],
 })
-export class ChamadoListarComponent {
+export class ChamadoListarComponent implements OnInit {
+
+  lista: Chamado[] = [];
   /*--- MODAL -----*/
   isVisible = false;
+  isVisibled = false;
 
   /*--- Tabela-------*/
   sortName: string | null = null;
@@ -16,7 +23,7 @@ export class ChamadoListarComponent {
   listOfName = [{ text: 'Joe', value: 'Joe' }, { text: 'Jim', value: 'Jim' }];
   listOfAddress = [{ text: 'London', value: 'London' }, { text: 'Sidney', value: 'Sidney' }];
   listOfSearchName: string[] = [];
-  listOfData: Array<{ name: string; age: number; address: string; [key: string]: string | number }> = [
+  listOfData: Array<{ name: string; age: number; address: string;[key: string]: string | number }> = [
     {
       name: 'John Brown',
       age: 32000,
@@ -52,11 +59,18 @@ export class ChamadoListarComponent {
     name: string;
     age: number;
     address: string;
-    [key: string]: string | number  }> = [
-    ...this.listOfData
-  ];
+    [key: string]: string | number
+  }> = [
+      ...this.listOfData
+    ];
 
-  constructor(private modalService: NzModalService) {}
+
+  constructor(private modalService: NzModalService,
+              private chamadoService: ChamadoService,
+  ) {
+  }
+  ngOnInit() {
+  }
 
   sort(sort: { key: string; value: string }): void {
     this.sortName = sort.key;
@@ -84,14 +98,14 @@ export class ChamadoListarComponent {
             ? 1
             : -1
           : b[this.sortName!] > a[this.sortName!]
-          ? 1
-          : -1
+            ? 1
+            : -1
       );
     } else {
       this.listOfDisplayData = data;
     }
   }
-  /* ------------  REFERENTE AO MODAL -------------- */
+  /* ------------  MODAL MANTER -------------- */
   showModal(): void {
     this.isVisible = true;
   }
@@ -103,7 +117,20 @@ export class ChamadoListarComponent {
   handleCancel(): void {
     this.isVisible = false;
   }
-  teste(){
-    this.showModal();
+  /* -------------- MODAL VIZUALIZAR ----------- */
+  showModVisu(): void {
+    this.isVisibled = true;
   }
+
+  handleOkVisu(): void {
+    this.isVisibled = false;
+  }
+
+  handleCancelVisu(): void {
+    this.isVisibled = false;
+  }
+  listar(): void {
+      this.lista = this.chamadoService.list();
+  }
+
 }

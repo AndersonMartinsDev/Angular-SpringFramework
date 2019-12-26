@@ -1,11 +1,9 @@
 package com.calltech.product.repository;
 
+import com.calltech.product.entity.Demanda;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.calltech.product.entidades.HistoricoChamado;
-
 @Repository
-public interface HistoricoChamadoRepository extends JpaRepository<HistoricoChamado, Long> {
-
+public interface DemandaRepository extends JpaRepository<Demanda, Long> {
 }

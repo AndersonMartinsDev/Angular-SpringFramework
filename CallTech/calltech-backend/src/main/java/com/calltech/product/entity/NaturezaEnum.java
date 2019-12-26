@@ -1,4 +1,5 @@
-package com.calltech.product.entidades;
+package com.calltech.product.entity;
+
 
 public enum NaturezaEnum {
 		REQUISICAO,

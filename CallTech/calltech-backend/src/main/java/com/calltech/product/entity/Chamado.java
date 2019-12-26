@@ -1,17 +1,13 @@
-package com.calltech.product.entidades;
+package com.calltech.product.entity;
 
 import java.time.LocalDate;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
-import javax.persistence.OneToMany;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -39,27 +35,11 @@ public class Chamado {
 	@Column(name="dat_criacao",length=20)
 	private LocalDate criacao;
 	
-
-	@DateTimeFormat
-	@Column(name="dat_alteracao",length=20)
-	private LocalDate alteracao;
-	
-
 	@DateTimeFormat
 	@Column(name="dat_vencimento",length=20)
 	private LocalDate vencimento;
-	
 
 	@DateTimeFormat
 	@Column(name="dat_fechamento",length=20)
 	private LocalDate fechamento;
-	
-	@OneToMany(cascade=CascadeType.REMOVE)
-	@JoinColumn(name="fk_chamado")
-	private Set<Tramite> tramites;
-	
-	@OneToMany(cascade=CascadeType.REMOVE)
-	@JoinColumn(name="fk_chamado")
-	private Set<HistoricoChamado> historico;
-	
 }

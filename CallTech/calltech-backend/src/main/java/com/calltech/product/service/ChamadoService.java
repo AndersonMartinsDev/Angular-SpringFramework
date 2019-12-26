@@ -1,4 +1,4 @@
-package com.calltech.product.validation;
+package com.calltech.product.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,11 +6,11 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.calltech.product.entidades.Chamado;
+import com.calltech.product.entity.Chamado;
 import com.calltech.product.repository.ChamadoRepository;
 
 @Service
-public class ChamadoRegras {
+public class ChamadoService {
 	
 	@Autowired
 	private ChamadoRepository chamadoRepositorio;
@@ -29,6 +29,8 @@ public class ChamadoRegras {
 		return chamadoRepositorio.findById(id);
 	}
 	
-	
+	public void save(Chamado chamado){
+		chamadoRepositorio.save(chamado);
+	}
 	
 }
