@@ -12,7 +12,7 @@ import { Demanda } from '../demanda';
 })
 export class ChamadoListarComponent implements OnInit {
 
-  lista: Demanda;
+  lista: Demanda[];
   /*--- MODAL -----*/
   isVisible = false;
   isVisibled = false;
@@ -69,7 +69,7 @@ export class ChamadoListarComponent implements OnInit {
   constructor(private modalService: NzModalService,
               private service: DemandaService
   ) {
-    this.service.listar().subscribe((demandas: Demanda) => {
+    this.service.listar().subscribe((demandas: Demanda[]) => {
       this.lista = demandas;
     });
   }

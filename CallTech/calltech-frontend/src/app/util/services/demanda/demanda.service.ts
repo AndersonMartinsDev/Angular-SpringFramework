@@ -11,6 +11,6 @@ export class DemandaService {
   constructor(private http: RequestService) { }
 
   listar() {
-      return this.http.get<Demanda>('demandas');
+      return this.http.get<Demanda[]>('demandas');
   }
 }

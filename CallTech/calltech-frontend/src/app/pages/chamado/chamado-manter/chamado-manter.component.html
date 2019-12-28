@@ -1,3 +1,13 @@
+<nz-page-header nzTitle="Novo Chamado">
+  <nz-breadcrumb nz-page-header-breadcrumb>
+    <nz-breadcrumb-item>First-level Menu</nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+      <a>Second-level Menu</a>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>Third-level Menu</nz-breadcrumb-item>
+  </nz-breadcrumb>
+</nz-page-header>
+
 
 <form
 nz-form
@@ -40,3 +50,5 @@ formGroup="validateForm"
   </div>
 </div>
 </form>
+<button nz-button nzType="primary" routerLink='/chamado'>Salvar</button>
+<button nz-button nzType="default" routerLink='/chamado'>Cancelar</button>
