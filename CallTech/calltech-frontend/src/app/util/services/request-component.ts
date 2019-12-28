@@ -16,11 +16,7 @@ export class RequestService {
   constructor(private http: HttpClient) {
   }
 
-  request<T>(apiUrl: string) {
+  get<T>(apiUrl: string) {
     return this.http.get<T>(this.url + apiUrl);
   }
-  response(apiUrl: string, T ) {
-    return this.http.post(this.url + apiUrl, T);
-  }
-
 }

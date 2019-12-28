@@ -8,8 +8,9 @@ import { RequestService } from '../request-component';
 })
 export class DemandaService {
 
-  constructor(private requestService: RequestService) { }
+  constructor(private http: RequestService) { }
 
   listar() {
+      return this.http.get<Demanda>('demandas');
   }
 }
