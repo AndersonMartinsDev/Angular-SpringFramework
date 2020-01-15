@@ -26,20 +26,12 @@ public class Chamado {
 	
 	@Column(name="numero_call",length=10)
 	private int numeroChamado;
-	
+
+	@Column(name="titulo",length=300)
+	private String titulo;
+
 	@Lob
 	@Column(name="descricao",length=1000)
 	private String descricao;
-	
-	@DateTimeFormat
-	@Column(name="dat_criacao",length=20)
-	private LocalDate criacao;
-	
-	@DateTimeFormat
-	@Column(name="dat_vencimento",length=20)
-	private LocalDate vencimento;
 
-	@DateTimeFormat
-	@Column(name="dat_fechamento",length=20)
-	private LocalDate fechamento;
 }

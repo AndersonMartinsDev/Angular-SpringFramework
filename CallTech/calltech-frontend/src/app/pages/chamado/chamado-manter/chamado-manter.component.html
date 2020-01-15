@@ -18,13 +18,13 @@ formGroup="validateForm"
     <div nz-col [nzMd]="12" [nzSm]="6" [nzXs]="6" [nzLg]="18">
         <nz-form-label nzNoCollon="true" nzRequired >Título</nz-form-label>
         <nz-form-item>
-            <input type="text" nz-input formControlName="name" placeholder="Informe um título descritivo" />
+            <input type="text" nz-input formControlName="titulo" placeholder="Informe um título descritivo" />
         </nz-form-item>
     </div>
     <div nz-col [nzMd]="12" [nzSm]="6" [nzXs]="6" [nzLg]="6">
     <nz-form-item>
       <nz-form-label nzNoCollon="true" nzRequired >Natureza</nz-form-label>
-      <nz-select ngModel="'Option1'" nzPlaceHolder="Natureza" nzRequired="true">
+      <nz-select formControlName="natureza" ngModel="natureza" nzPlaceHolder="Natureza" nzRequired="true">
         <nz-option nzLabel="Erro" [nzValue]="'erro'"></nz-option>
         <nz-option nzLabel="Duvida" [nzValue]="'Duvida'"></nz-option>
         <nz-option nzLabel="Implementação" [nzValue]="'implementacao'"></nz-option>
@@ -36,7 +36,7 @@ formGroup="validateForm"
 <div nz-row nzGutter="8">
   <div nz-col>
   <nz-form-item>
-    <nz-form-label nzNoCollon="true" nzRequired>Descrição do Chamado</nz-form-label>
+    <nz-form-label formControlName="descricao" nzNoCollon="true" nzRequired>Descrição do Chamado</nz-form-label>
     <nz-form-control>
       <textarea
       nzRequired ="true"

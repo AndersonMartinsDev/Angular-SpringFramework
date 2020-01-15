@@ -13,4 +13,7 @@ export class DemandaService {
   listar() {
       return this.http.get<Demanda[]>('demandas');
   }
+  getDemanda(id: number) {
+      return this.http.get<Demanda>('demandas/' + id);
+  }
 }

@@ -1,13 +1,56 @@
-
-<div nz-row >
-    <div nz-col [nzSm]="6"  [nzXs]="6"  [nzLg]="6">
-        <nz-form-label nzNoColon="true">Numero de Chamado</nz-form-label>
-        <nz-form-label nzNoColon="true">23233</nz-form-label>
+<div>
+  <div nz-row nzGutter="16">
+    <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="8">
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">Numero</nz-form-label>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label formControlName="this.entity.chamado.titulo" (ngModel)="this.entity.chamado.titulo" nzNoColon="true"></nz-form-label>
+      </nz-form-item>
     </div>
-    <div nz-col [nzXs]="6"  [nzSm]="6" [nzLg]="6">
-        <nz-form-label nzNoColon="true">Data de Criação</nz-form-label>
+    <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="8">
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">Titulo</nz-form-label>
+      </nz-form-item>
+      <nz-form-item>
         <nz-form-label nzNoColon="true">19/09/2019</nz-form-label>
+      </nz-form-item>
     </div>
+    <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="8">
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">Data de Criação</nz-form-label>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">19/09/2019</nz-form-label>
+      </nz-form-item>
+    </div>
+  </div>
+  <div nz-row nzGutter="16">
+    <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="8">
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">Numero de Chamado</nz-form-label>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label (ngModel)="this.entity.chamado.titulo" nzNoColon="true">teste</nz-form-label>
+      </nz-form-item>
+    </div>
+    <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="8">
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">Titulo</nz-form-label>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">19/09/2019</nz-form-label>
+      </nz-form-item>
+    </div>
+    <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="8">
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">Data de Criação</nz-form-label>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">19/09/2019</nz-form-label>
+      </nz-form-item>
+    </div>
+  </div>
 </div>
 <button nz-button nzType="primary" routerLink='/chamado'>Editar</button>
 <button nz-button nzType="default" routerLink='/chamado'>Cancelar</button>

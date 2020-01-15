@@ -12,7 +12,7 @@ import com.calltech.product.service.ChamadoService;
 
 @RestController
 @CrossOrigin
-@RequestMapping(path="{project.version}/chamado")
+@RequestMapping(path="${project.version}/chamados")
 public class ChamadoController {
 
 	@Autowired

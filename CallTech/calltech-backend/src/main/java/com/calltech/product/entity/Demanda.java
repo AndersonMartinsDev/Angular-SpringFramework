@@ -22,6 +22,14 @@ public class Demanda {
     @DateTimeFormat
     private LocalDate created;
 
+    @DateTimeFormat
+    @Column(name="dat_vencimento",length=20)
+    private LocalDate vencimento;
+
+    @DateTimeFormat
+    @Column(name="dat_fechamento",length=20)
+    private LocalDate closed;
+
     @OneToOne
     @JoinColumn(name = "id_chamado")
     private Chamado chamado;

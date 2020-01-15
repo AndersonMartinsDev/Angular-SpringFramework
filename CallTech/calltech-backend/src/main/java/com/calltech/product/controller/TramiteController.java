@@ -13,7 +13,7 @@ import com.calltech.product.entity.Tramite;
 import com.calltech.product.service.TramiteService;
 
 @RestController
-@RequestMapping(path="v1/tramite")
+@RequestMapping(path="${project.version}/tramite")
 public class TramiteController {
 	
 	@Autowired

@@ -27,7 +27,5 @@ public class Tramite {
 	@Lob
 	@Column(name="descricao",length=1000)
 	private String descricao;
-	
-	@OneToOne
-	private Chamado chamado;
+
 }

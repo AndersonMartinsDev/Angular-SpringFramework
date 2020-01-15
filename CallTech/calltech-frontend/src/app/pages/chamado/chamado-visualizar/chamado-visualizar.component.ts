@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Demanda } from '../demanda';
+import { DemandaService } from 'src/app/util/services/demanda/demanda.service';
 
 @Component({
   selector: 'app-chamado-visualizar',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChamadoVisualizarComponent implements OnInit {
 
-  constructor() { }
+  entity: Demanda;
+
+  constructor(private service: DemandaService) {
+    this.service.getDemanda(1).subscribe((demanda: Demanda) => {
+      this.entity = demanda;
+    });
+  }
 
   ngOnInit() {
+
   }
 
 }

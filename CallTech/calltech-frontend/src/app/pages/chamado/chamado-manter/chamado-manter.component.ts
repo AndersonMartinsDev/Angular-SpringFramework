@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { DemandaService } from 'src/app/util/services/demanda/demanda.service';
+import { Demanda } from '../demanda';
 
 @Component({
   selector: 'app-chamado-manter',
@@ -7,14 +9,24 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
   styleUrls: ['./chamado-manter.component.scss']
 })
 export class ChamadoManterComponent implements OnInit {
-  validateForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  form: FormGroup;
+  entity: Demanda;
+  constructor(private fb: FormBuilder, private route: DemandaService) { }
 
   ngOnInit() {
-    this.validateForm = this.fb.group({
-      fieldA: [null, [Validators.required]],
-      descricao: [null, [Validators.required]]
+    this.route.getDemanda(1).subscribe((demanda: Demanda) => {
+      this.entity = demanda;
     });
+
+    this.form = this.fb.group({
+      titulo: [this.entity.chamado.titulo, [Validators.required]],
+      natureza: [this.entity.chamado.natureza, [Validators.required]],
+      descricao: [this.entity.descricao, [Validators.required]]
+    });
+  }
+
+  saveForm(model): void {
+
   }
 
 }
