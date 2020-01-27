@@ -1,14 +1,15 @@
 export interface Chamado {
-   natureza: string;
    titulo: string;
+   numeroChamado: number;
+   codChamado: number;
+   descricao: string;
 }
 
 export interface Demanda {
-  descricao: string;
-  numeroChamado: number;
-  codChamado: number;
-  criacao: Date;
+  natureza: string;
+  created: Date;
   vencimento: Date;
   fechamento: Date;
   chamado: Chamado;
+  status: string;
 }

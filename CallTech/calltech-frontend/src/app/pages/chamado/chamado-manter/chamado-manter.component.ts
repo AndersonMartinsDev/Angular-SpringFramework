@@ -20,8 +20,8 @@ export class ChamadoManterComponent implements OnInit {
 
     this.form = this.fb.group({
       titulo: [this.entity.chamado.titulo, [Validators.required]],
-      natureza: [this.entity.chamado.natureza, [Validators.required]],
-      descricao: [this.entity.descricao, [Validators.required]]
+      natureza: [this.entity.chamado, [Validators.required]],
+      descricao: [this.entity, [Validators.required]]
     });
   }
 
