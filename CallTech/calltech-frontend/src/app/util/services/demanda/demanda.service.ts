@@ -8,12 +8,17 @@ import { RequestService } from '../request-component';
 })
 export class DemandaService {
 
+  url = 'demandas';
+
   constructor(private http: RequestService) { }
 
   listar() {
-      return this.http.get<Demanda[]>('demandas');
+    return this.http.get<Demanda[]>(this.url);
   }
   getDemanda(id: number) {
-      return this.http.get<Demanda>('demandas/' + id);
+    return this.http.get<Demanda>(this.url + '/' + id);
+  }
+  salvar(model) {
+    this.http.post(this.url, model);
   }
 }

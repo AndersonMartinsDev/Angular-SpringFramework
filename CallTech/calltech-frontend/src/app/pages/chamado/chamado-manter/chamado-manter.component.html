@@ -9,10 +9,8 @@
 </nz-page-header>
 
 
-<form
-nz-form
-formGroup="validateForm"
-(ngSubmit)="submitForm()"
+<form    
+nz-form [formGroup]="form"
 >
 <div nz-row nzGutter="16">
     <div nz-col [nzMd]="12" [nzSm]="6" [nzXs]="6" [nzLg]="18">
@@ -36,19 +34,26 @@ formGroup="validateForm"
 <div nz-row nzGutter="8">
   <div nz-col>
   <nz-form-item>
-    <nz-form-label formControlName="descricao" nzNoCollon="true" nzRequired>Descrição do Chamado</nz-form-label>
+    <nz-form-label nzNoCollon="true" nzRequired>Descrição do Chamado</nz-form-label>
     <nz-form-control>
       <textarea
+      formControlName="descricao"
       nzRequired ="true"
       nz-input
       placeholder="Lembre-se! Quanto mais detalhe melhor!"
-      (ngModel)="descricao"
       [nzAutosize]="{ minRows: 2, maxRows: 6 }"
     ></textarea>
     </nz-form-control>
   </nz-form-item>
   </div>
+  <div>
+<nz-form-item>
+  <h2>{{form.value | json}}</h2>
+  <h2>{{form.valid | json}}</h2>
+</nz-form-item>
+
+  </div>
 </div>
 </form>
-<button nz-button nzType="primary" routerLink='/chamado'>Salvar</button>
+<button nz-button nzType="primary" (click)="saveForm(form.value)">Salvar</button>
 <button nz-button nzType="default" routerLink='/chamado'>Cancelar</button>

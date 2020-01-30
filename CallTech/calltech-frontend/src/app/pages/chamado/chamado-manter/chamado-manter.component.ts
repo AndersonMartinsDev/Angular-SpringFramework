@@ -11,22 +11,27 @@ import { Demanda } from '../demanda';
 export class ChamadoManterComponent implements OnInit {
   form: FormGroup;
   entity: Demanda;
-  constructor(private fb: FormBuilder, private route: DemandaService) { }
+  constructor(private fb: FormBuilder, private route: DemandaService) {
+
+  }
 
   ngOnInit() {
     this.route.getDemanda(1).subscribe((demanda: Demanda) => {
       this.entity = demanda;
     });
+    this.initForm();
 
-    this.form = this.fb.group({
-      titulo: [this.entity.chamado.titulo, [Validators.required]],
-      natureza: [this.entity.chamado, [Validators.required]],
-      descricao: [this.entity, [Validators.required]]
-    });
   }
 
   saveForm(model): void {
-
+    this.route.salvar(model);
   }
 
+  initForm() {
+    this.form = this.fb.group({
+      titulo: ['', Validators.required],
+      natureza: ['', Validators.required],
+      descricao: ['', Validators.required]
+    });
+  }
 }

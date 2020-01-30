@@ -27,6 +27,7 @@ public class ChamadoController {
 	public void salvar(@RequestBody Chamado chamado){
 		service.save(chamado);
 	}
+
 	@GetMapping(path="{id}")
 	public Optional<Chamado> porId(@PathVariable Long id){
 		return service.porId(id);

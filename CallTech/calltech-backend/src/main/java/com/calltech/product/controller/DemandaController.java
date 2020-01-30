@@ -26,4 +26,9 @@ public class DemandaController {
     private Optional<Demanda> porId(@PathVariable Long id){
         return demandaService.getById(id);
     }
+
+    @PostMapping
+    private void salvar(@RequestBody Demanda demanda){
+        demandaService.save(demanda);
+    }
 }

@@ -9,6 +9,7 @@ import pt from '@angular/common/locales/pt';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SharedModule } from './shared/shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 registerLocaleData(pt);
 
 @NgModule({
@@ -24,6 +25,7 @@ registerLocaleData(pt);
     BrowserAnimationsModule,
     ScrollingModule,
     DragDropModule,
+    ReactiveFormsModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: pt_BR }],
   bootstrap: [AppComponent]

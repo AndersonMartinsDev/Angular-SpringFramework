@@ -7,6 +7,7 @@ import { ChamadoRoutingModule } from './chamado-routing.module';
 import { ChamadoVisualizarComponent } from './chamado-visualizar/chamado-visualizar.component';
 import { ChamadoManterComponent } from './chamado-manter/chamado-manter.component';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,6 +28,9 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
     NzPageHeaderModule,
     NzBreadCrumbModule,
     NzGridModule,
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule,
   ],
   bootstrap: [ ChamadoListarComponent ]
 })
