@@ -1,3 +1,4 @@
+
 <nz-page-header nzTitle="Chamados">
   <nz-breadcrumb nz-page-header-breadcrumb>
     <nz-breadcrumb-item>First-level Menu</nz-breadcrumb-item>
@@ -7,9 +8,12 @@
     <nz-breadcrumb-item>Third-level Menu</nz-breadcrumb-item>
   </nz-breadcrumb>
 </nz-page-header>
-
+<nz-card>
 <button nz-button nzType="primary" routerLink='../chamado/manter'>Novo Chamado</button>
-  <nz-table #filterTable [nzData]="lista">
+  <nz-table #filterTable 
+   [nzPageIndex]="1"
+  [nzData]="lista"  
+  nzSize="middle">
       <thead nzSingleSort>
         <tr>
           <th
@@ -40,5 +44,5 @@
         </tr>
       </tbody>
     </nz-table>
-
+  </nz-card>
 

@@ -19,9 +19,10 @@ export class RequestService {
   get<T>(apiUrl: string) {
     return this.http.get<T>(this.uri + apiUrl);
   }
-  post(url: string , model: any) {
+  post(url: string , model) {
     const link = this.uri +url;
-    debugger;
-    this.http.post(link, model);
+    console.log(model);
+    this.http.post(link, model).subscribe(res => console.log(model)
+    );
   }
 }

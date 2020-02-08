@@ -1,8 +1,6 @@
-export interface Chamado {
+export class Chamado {
+    titulo: string;
     numeroChamado: number;
     descricao: string;
     codChamado: number;
-    criacao: Date;
-    vencimento: Date;
-    fechamento: Date;
 }

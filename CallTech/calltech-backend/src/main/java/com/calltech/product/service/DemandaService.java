@@ -32,7 +32,7 @@ public class DemandaService implements GenericService<Demanda> {
         try{
             demandaRepository.save(entity);
         }catch (Exception ex){
-            log.error("Error ao salvar demanda");
+            log.error("Error ao salvar demanda",ex);
         }
     }
 

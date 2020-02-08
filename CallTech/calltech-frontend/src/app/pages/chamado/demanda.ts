@@ -1,9 +1,4 @@
-export interface Chamado {
-   titulo: string;
-   numeroChamado: number;
-   codChamado: number;
-   descricao: string;
-}
+import { Chamado } from 'src/app/util/interface/chamado';
 
 export interface Demanda {
   natureza: string;

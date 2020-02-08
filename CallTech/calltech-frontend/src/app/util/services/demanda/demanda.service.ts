@@ -18,7 +18,8 @@ export class DemandaService {
   getDemanda(id: number) {
     return this.http.get<Demanda>(this.url + '/' + id);
   }
-  salvar(model) {
+  salvar(model: Demanda) {
+    
     this.http.post(this.url, model);
   }
 }

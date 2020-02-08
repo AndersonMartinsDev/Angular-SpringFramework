@@ -9,6 +9,7 @@ import { ChamadoModule } from 'src/app/pages/chamado/chamado.module';
 import { IconsProviderModule } from 'src/app/icons-provider.module';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -33,6 +34,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NzGridModule,
     NzIconModule,
     IconsProviderModule,
+    NzCardModule,
   ],
   providers: [{ provide: NZ_ICONS, useValue: icons }],
 })

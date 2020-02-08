@@ -4,6 +4,7 @@ package com.calltech.product.entity;
 import com.calltech.util.EntityHistory;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Cascade;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -31,6 +32,7 @@ public class Demanda {
     private LocalDate closed;
 
     @OneToOne
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     @JoinColumn(name = "id_chamado")
     private Chamado chamado;
 
