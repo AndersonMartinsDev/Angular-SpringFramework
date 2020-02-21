@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.calltech.product.entidades.Tramite;
-import com.calltech.product.validation.TramiteRegras;
+import com.calltech.product.entity.Tramite;
+import com.calltech.product.service.TramiteService;
 
 @RestController
-@RequestMapping(path="v1/tramite")
+@RequestMapping(path="${project.version}/tramite")
 public class TramiteController {
 	
 	@Autowired
-	private TramiteRegras tramite;
+	private TramiteService tramite;
 
 	@GetMapping
 	public List<Tramite> listar(){

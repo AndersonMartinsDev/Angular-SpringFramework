@@ -1,0 +1,37 @@
+<nz-page-header nzTitle="Chamados">
+  <nz-breadcrumb nz-page-header-breadcrumb>
+    <nz-breadcrumb-item>First-level Menu</nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+      <a>Second-level Menu</a>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>Third-level Menu</nz-breadcrumb-item>
+  </nz-breadcrumb>
+</nz-page-header>
+<nz-card>
+  <button nz-button nzType="primary" routerLink='../chamado/manter'>Novo Chamado</button>
+  <nz-table [nzPageIndex]="1" [nzData]="lista" nzSize="middle">
+    <thead>
+      <tr>
+        <th>
+          Título
+        </th>
+        <!--<th nzShowSort nzSortKey="">Numero</th>-->
+        <th>Numero</th>
+        <th>
+          Natureza
+        </th>
+        <th nzShowSort nzSortKey="">Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of lista" routerLink="visualizar/{{data.id}}">
+        <td>{{ data.chamado.titulo }}</td>
+        <td>{{ data.chamado.numeroChamado }}</td>
+        <td>{{ data.natureza }}</td>
+        <td>{{ data.status }}</td>
+        <td><i nz-icon nzType="eye" nzTheme="outline"></i><i nz-icon nzType="rest" nzTheme="twotone"></i></td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>

@@ -1,0 +1,62 @@
+<div>
+  <h2>CHAMADO - {{ this.entity ? this.entity.chamado.numeroChamado : 0}}</h2>
+</div>
+<div>
+  <!-- NUMERO | TITULO | NATUREZA -->
+  <div nz-row nzGutter="16">
+    <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="8">
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">Titulo</nz-form-label>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">{{ this.entity.chamado.titulo }}</nz-form-label>
+      </nz-form-item>
+    </div>
+    <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="8">
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">Natureza</nz-form-label>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label (ngModel)="this.entity.chamado.titulo" nzNoColon="true">{{ this.entity.natureza }}
+        </nz-form-label>
+      </nz-form-item>
+    </div>
+    <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="8">
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">Status</nz-form-label>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">{{ this.entity.status }}</nz-form-label>
+      </nz-form-item>
+    </div>
+  </div>
+  <!-- DATAS | CRiAÇÃo | VENCIMENTO | FECHAMENTO -->
+  <div nz-row nzGutter="16">
+    <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="8">
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">Data de Criação</nz-form-label>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">{{ this.entity.created | date:'dd/MM/yyyy' }}</nz-form-label>
+      </nz-form-item>
+    </div>
+    <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="8">
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">Date de Vencimento</nz-form-label>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">{{ this.entity.vencimento | date:'dd/MM/yyyy'}}</nz-form-label>
+      </nz-form-item>
+    </div>
+    <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="8">
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">Data de Criação</nz-form-label>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzNoColon="true">19/09/2019</nz-form-label>
+      </nz-form-item>
+    </div>
+  </div>
+</div>
+<button nz-button nzType="primary" routerLink='/chamado'>Editar</button>
+<button nz-button nzType="default" routerLink='/chamado'>Cancelar</button>
