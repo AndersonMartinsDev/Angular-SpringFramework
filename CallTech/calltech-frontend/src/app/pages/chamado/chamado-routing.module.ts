@@ -6,12 +6,13 @@ import { ChamadoManterComponent } from './chamado-manter/chamado-manter.componen
 
 const routes: Routes = [
   { path: '', component: ChamadoListarComponent },
-  { path: 'visualizar', component: ChamadoVisualizarComponent },
+  { path: 'visualizar/:id', component: ChamadoVisualizarComponent },
   { path: 'manter', component: ChamadoManterComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes,
+   )],
   exports: [RouterModule]
 })
 export class ChamadoRoutingModule { }

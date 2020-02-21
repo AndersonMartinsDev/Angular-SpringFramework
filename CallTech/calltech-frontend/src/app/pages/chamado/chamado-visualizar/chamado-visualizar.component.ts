@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Demanda } from '../demanda';
 import { DemandaService } from 'src/app/util/services/demanda/demanda.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-chamado-visualizar',
@@ -9,16 +10,23 @@ import { DemandaService } from 'src/app/util/services/demanda/demanda.service';
 })
 export class ChamadoVisualizarComponent implements OnInit {
 
-  entity: Demanda;
+  entity: Demanda = new Demanda();
 
-  constructor(private service: DemandaService) {
-    this.service.getDemanda(1).subscribe((demanda: Demanda) => {
-      this.entity = demanda;
-    });
+  constructor(
+    private service: DemandaService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+
   }
-
   ngOnInit() {
-
+    this.init();
   }
 
+  init(): void {
+    this.service.getDemanda(this.route.snapshot.params.id)
+      .subscribe((demanda: Demanda) => {
+        this.entity = demanda;
+      });
+  }
 }

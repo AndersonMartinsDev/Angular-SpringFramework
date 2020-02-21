@@ -1,6 +1,11 @@
-import { Chamado } from 'src/app/util/interface/chamado';
 
-export interface Demanda {
+export class Chamado {
+ numeroChamado: number;
+ titulo: string;
+}
+
+export class Demanda {
+  id: number;
   natureza: string;
   created: Date;
   vencimento: Date;
