@@ -10,6 +10,9 @@ import { IconsProviderModule } from 'src/app/icons-provider.module';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzFormModule } from 'ng-zorro-antd';
+import { NzInputModule } from 'ng-zorro-antd';
+import { NzSelectModule } from 'ng-zorro-antd';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -19,9 +22,22 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
 @NgModule({
   declarations: [],
   imports: [
-    ChamadoModule,
-    SecurityModule,
-    CommonModule,
+    NzButtonModule,
+    NzIconModule,
+    NzPageHeaderModule,
+    NzBreadCrumbModule,
+    NzFormModule,
+    NzInputModule,
+    NzSelectModule,
+    NzIconModule,
+    NzPageHeaderModule,
+    NzBreadCrumbModule,
+    NzGridModule,
+    ReactiveFormsModule,
+    FormsModule,
+
+  ],
+  exports: [
     NzButtonModule,
     NzTableModule,
     BrowserModule,

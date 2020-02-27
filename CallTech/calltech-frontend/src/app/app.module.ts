@@ -10,6 +10,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SharedModule } from './shared/shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NzButtonModule } from 'ng-zorro-antd';
 registerLocaleData(pt);
 
 @NgModule({
@@ -28,6 +29,7 @@ registerLocaleData(pt);
     ReactiveFormsModule,
     NzCardModule,
   ],
+  exports: [NzButtonModule],
   providers: [{ provide: NZ_I18N, useValue: pt_BR }],
   bootstrap: [AppComponent]
 })
