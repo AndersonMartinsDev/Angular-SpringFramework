@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SecurityModule } from 'src/app/pages/segurança/security/security.module';
-import { NzButtonModule, NzTableModule, NzIconModule, NzGridModule, NzBreadCrumbModule, NzPageHeaderModule, NZ_ICONS } from 'ng-zorro-antd';
+
+import { NzButtonModule, NzTableModule, NzIconModule, NzGridModule, NzBreadCrumbModule, NzPageHeaderModule, NZ_ICONS, NzTabsModule } from 'ng-zorro-antd';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
@@ -35,12 +35,12 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NzGridModule,
     ReactiveFormsModule,
     FormsModule,
+    NzTabsModule
 
   ],
   exports: [
     NzButtonModule,
     NzTableModule,
-    BrowserModule,
     FormsModule,
     HttpClientModule,
     HttpClientJsonpModule,
@@ -51,6 +51,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NzIconModule,
     IconsProviderModule,
     NzCardModule,
+    NzTabsModule
   ],
   providers: [{ provide: NZ_ICONS, useValue: icons }],
 })
