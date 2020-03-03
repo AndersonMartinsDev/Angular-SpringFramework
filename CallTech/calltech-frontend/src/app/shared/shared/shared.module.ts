@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+// tslint:disable-next-line: max-line-length
 import { NzButtonModule, NzTableModule, NzIconModule, NzGridModule, NzBreadCrumbModule, NzPageHeaderModule, NZ_ICONS, NzTabsModule } from 'ng-zorro-antd';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -51,7 +52,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NzIconModule,
     IconsProviderModule,
     NzCardModule,
-    NzTabsModule
+    NzTabsModule,
+    NzFormModule,
   ],
   providers: [{ provide: NZ_ICONS, useValue: icons }],
 })

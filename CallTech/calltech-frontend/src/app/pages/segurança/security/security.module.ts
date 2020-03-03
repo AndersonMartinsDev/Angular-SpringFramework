@@ -29,7 +29,6 @@ import { SharedModule } from 'src/app/shared/shared/shared.module';
     NzGridModule,
     CommonModule,
     NzButtonModule,
-    NzFormModule,
     NzInputModule,
     ReactiveFormsModule,
     FormsModule,

@@ -1,4 +1,50 @@
-<p>usuario works!</p>
-<h1>USUÁRIO LISTAR</h1>
 
-<button nz-button nz-type="danger" [routerLink]="['manter']"> Botão</button>
+<nz-page-header nzTitle="Usuário">
+  <nz-breadcrumb nz-page-header-breadcrumb>
+    <nz-breadcrumb-item>First-level Menu</nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+      <a>Second-level Menu</a>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>Third-level Menu</nz-breadcrumb-item>
+  </nz-breadcrumb>
+</nz-page-header>
+
+<div>
+  <button nz-button nzType="primary" [routerLink]="['manter']"> Novo Usuário</button>
+</div>
+<div>
+<nz-table #filterTable [nzData]="listOfDisplayData">
+  <thead (nzSortChange)="sort($event)" nzSingleSort>
+    <tr>
+      <th
+        nzShowSort
+        nzSortKey="name"
+        nzShowFilter
+        [nzFilters]="listOfName"
+        (nzFilterChange)="filter($event, searchAddress)"
+      >
+        Name
+      </th>
+      <th nzShowSort nzSortKey="age">Age</th>
+      <th
+        nzShowSort
+        nzSortKey="address"
+        nzShowFilter
+        [nzFilterMultiple]="false"
+        [nzFilters]="listOfAddress"
+        (nzFilterChange)="filter(listOfSearchName, $event)"
+      >
+        Address
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of filterTable.data">
+      <td>{{ data.name }}</td>
+      <td>{{ data.age }}</td>
+      <td>{{ data.address }}</td>
+    </tr>
+  </tbody>
+</nz-table>
+</div>
+

@@ -6,26 +6,31 @@ import { PerfilManterComponent } from './perfil/perfil-manter/perfil-manter.comp
 import { UsuarioManterComponent } from './usuario/usuario-manter/usuario-manter.component';
 
 const routes: Routes = [
-  { path: 'usuario', children:[
-    {
-      path: '',
-      component: UsuarioComponent
-    },{
-      path: 'manter',
-      component: UsuarioManterComponent
-    }
+  { path: '', pathMatch: 'full', redirectTo: '/seguranca' },
+  {
+    path: 'usuario', children: [
+      {
+        path: '',
+        component: UsuarioComponent
+      }, {
+        path: 'manter',
+        component: UsuarioManterComponent
+      }
 
-  ] },
-  { path: 'perfil', children: [
-    {
-      path: '',
-      component: PerfilComponent
-     },
-    {
-      path: 'manter',
-      component: PerfilManterComponent,
-    }
-  ]}
+    ]
+  },
+  {
+    path: 'perfil', children: [
+      {
+        path: '',
+        component: PerfilComponent
+      },
+      {
+        path: 'manter',
+        component: PerfilManterComponent,
+      }
+    ]
+  }
 ];
 
 @NgModule({

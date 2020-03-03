@@ -6,12 +6,12 @@ const colorList = ['#f56a00', '#7265e6', '#ffbf00', '#00a2ae'];
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 
   isCollapsed = false;
- 
+
   text: string = userList[3];
   color: string = colorList[3];
 
