@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
+import { error } from 'util';
 
 
 @Injectable({
@@ -20,9 +21,9 @@ export class RequestService {
     return this.http.get<T>(this.uri + apiUrl);
   }
   post(url: string , model) {
-    const link = this.uri +url;
-    console.log(model);
-    this.http.post(link, model).subscribe(res => console.log(model)
+    const link = this.uri + url;
+    this.http.post(link, model).toPromise().then().catch(
+      error
     );
   }
 }

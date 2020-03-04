@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SecurityService } from 'src/app/util/services/security/security.service';
 
 @Component({
   selector: 'app-usuario',
@@ -7,14 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioComponent {
 
-  constructor() { }
+
   sortName: string | null = null;
   sortValue: string | null = null;
   searchAddress: string;
   listOfName = [{ text: 'Joe', value: 'Joe' }, { text: 'Jim', value: 'Jim' }];
   listOfAddress = [{ text: 'London', value: 'London' }, { text: 'Sidney', value: 'Sidney' }];
   listOfSearchName: string[] = [];
-  listOfData: Array<{ name: string; age: number; address: string; [key: string]: string | number }> = [
+  listOfData: Array<{ name: string; age: number; address: string;[key: string]: string | number }> = [
     {
       name: 'John Brown',
       age: 32,
@@ -36,9 +37,22 @@ export class UsuarioComponent {
       address: 'London No. 2 Lake Park'
     }
   ];
-  listOfDisplayData: Array<{ name: string; age: number; address: string; [key: string]: string | number }> = [
-    ...this.listOfData
-  ];
+  listOfDisplayData: any;
+
+  constructor(private service: SecurityService) {
+    this.listOfDisplayData = []
+    this.listar();
+  }
+
+
+  async listar() {
+    await this.service.listarUsuarios().subscribe(data => {
+      this.listOfDisplayData = data;
+    });
+  }
+
+
+
 
   sort(sort: { key: string; value: string }): void {
     this.sortName = sort.key;
@@ -66,8 +80,8 @@ export class UsuarioComponent {
             ? 1
             : -1
           : b[this.sortName!] > a[this.sortName!]
-          ? 1
-          : -1
+            ? 1
+            : -1
       );
     } else {
       this.listOfDisplayData = data;

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, RequiredValidator } from '@angular/forms';
+import { SecurityService } from 'src/app/util/services/security/security.service';
+import { Router, RouterLink } from '@angular/router';
+import { Usuario } from 'src/app/util/interface/user';
 
 @Component({
   selector: 'app-usuario-manter',
@@ -9,20 +12,18 @@ import { FormGroup, FormBuilder, Validators, RequiredValidator } from '@angular/
 export class UsuarioManterComponent implements OnInit {
 
   form: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private service: SecurityService) { }
 
   ngOnInit() {
     this.form = this.fb.group({
       nome: [],
       email: [, [Validators.email, Validators.required]],
-      usuario: [, Validators.required],
-      senha: [, Validators.required],
+      user: [, Validators.required],
+      password: [, Validators.required],
     });
   }
-  save(model: FormGroup) {
-    if (model.valid) {
-      return;
-    }
-    console.log(model);
+  save(model: Usuario) {
+    this.service.inserir(model);
   }
 }

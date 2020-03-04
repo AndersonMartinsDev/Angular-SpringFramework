@@ -14,6 +14,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzFormModule } from 'ng-zorro-antd';
 import { NzInputModule } from 'ng-zorro-antd';
 import { NzSelectModule } from 'ng-zorro-antd';
+import { BreadcrumbComponent } from './component/breadcrumb/breadcrumb.component';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -21,7 +22,7 @@ const antDesignIcons = AllIcons as {
 const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key]);
 
 @NgModule({
-  declarations: [],
+  declarations: [BreadcrumbComponent],
   imports: [
     NzButtonModule,
     NzIconModule,

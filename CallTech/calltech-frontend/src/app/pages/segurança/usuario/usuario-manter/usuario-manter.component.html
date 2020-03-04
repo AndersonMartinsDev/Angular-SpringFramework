@@ -1,4 +1,3 @@
-<p>usuario-manter works!</p>
 <nz-tabset>
   <nz-tab nzTitle="Usuário">
     <form nz-form [formGroup]="form">
@@ -12,7 +11,7 @@
           <nz-form-label>
             Usuário
           </nz-form-label>
-          <input nz-input formControlName="usuario" />
+          <input nz-input formControlName="user" />
         </div>
         <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="10">
           <nz-form-label>
@@ -23,8 +22,7 @@
           <nz-form-label>
             Senha
           </nz-form-label>
-            <input nz-input formControlName="senha" type="password" placeholder="Senha"  />
-
+          <input nz-input formControlName="password" type="password" placeholder="Senha" />
         </div>
       </div>
     </form>
@@ -34,6 +32,26 @@
     </div>
   </nz-tab>
   <nz-tab nzTitle="Perfil">
-    Content of Tab Pane 2
+    <div nz-row nzGutter="16">
+      <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="16">
+        <h2>Relacione a um Perfil</h2>
+        <nz-select style="width: 50%;z-index: 999;">
+          <nz-option nzLabel="Perfil" nzValue="Perfil"></nz-option>
+        </nz-select>
+        <button nz-button nzType="primary"><i nz-icon nzType="plus-circle" nzTheme="fill"
+            style="margin: 2px;"></i></button>
+      </div>
+      <div nz-row nzGutter="16">
+        <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="16">
+          <nz-table width="200" #filterTable [nzData]="" >
+            <tbody>
+              <tr *ngFor="let data of filterTable.data">
+                <td>{{ data.address }}</td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </div>
+      </div>
+    </div>
   </nz-tab>
 </nz-tabset>

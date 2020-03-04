@@ -11,7 +11,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
   templateUrl: './chamado-listar.component.html',
   providers: [DemandaService],
 })
-export class ChamadoListarComponent implements OnInit {
+export class ChamadoListarComponent {
 
   entity: Demanda;
   lista: Demanda[];
@@ -23,41 +23,19 @@ export class ChamadoListarComponent implements OnInit {
   sortName: string | null = null;
   sortValue: string | null = null;
   searchAddress: string;
- 
+
   constructor(private modalService: NzModalService,
-              private service: DemandaService,
-              private route: ActivatedRoute,
-              private router: Router,
+    private service: DemandaService,
+    private route: ActivatedRoute,
+    private router: Router,
   ) {
-    this.service.listar().subscribe((demandas: Demanda[]) => {
+    this.listar();
+  }
+
+  async listar() {
+    await this.service.listar().subscribe((demandas: Demanda[]) => {
       this.lista = demandas;
     });
-  }
-  ngOnInit() {
-  }
-  /* ------------  MODAL MANTER -------------- */
-  showModal(): void {
-    this.isVisible = true;
-  }
-
-  handleOk(): void {
-    this.isVisible = false;
-  }
-
-  handleCancel(): void {
-    this.isVisible = false;
-  }
-  /* -------------- MODAL VIZUALIZAR ----------- */
-  showModVisu(): void {
-    this.isVisibled = true;
-  }
-
-  handleOkVisu(): void {
-    this.isVisibled = false;
-  }
-
-  handleCancelVisu(): void {
-    this.isVisibled = false;
   }
 
 }
