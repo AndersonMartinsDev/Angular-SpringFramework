@@ -1,0 +1,27 @@
+<form nz-form [formGroup]="form">
+    <div nz-row nzGutter="16">
+        <div nz-col [nzMd]="12" [nzSm]="6" [nzXs]="6" [nzLg]="18">
+            <nz-form-label>Titulo</nz-form-label>
+            <input nz-input/>
+        </div>
+    </div>
+</form>
+<br />
+
+<div class="permissions">
+<nz-tree
+[nzData]="nodes"
+nzCheckable
+nzMultiple
+[nzCheckedKeys]="defaultCheckedKeys"
+[nzExpandedKeys]="defaultExpandedKeys"
+[nzSelectedKeys]="defaultSelectedKeys"
+(nzClick)="nzEvent($event)"
+(nzExpandChange)="nzEvent($event)"
+(nzCheckBoxChange)="nzEvent($event)"
+>
+</nz-tree>
+</div>
+
+<button nz-button nzType="primary"> Salvar </button>
+<button nz-button nzType="default" [routerLink]="['..']" >Cancelar</button>

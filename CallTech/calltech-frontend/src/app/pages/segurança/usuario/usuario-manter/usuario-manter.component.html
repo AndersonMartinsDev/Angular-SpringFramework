@@ -1,0 +1,57 @@
+<nz-tabset>
+  <nz-tab nzTitle="Usuário">
+    <form nz-form [formGroup]="form">
+      <div nz-row nzGutter="16">
+        <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="10">
+          <nz-form-label>
+            Nome
+          </nz-form-label>
+          <input nz-input id="nome" formControlName="nome" />
+          <nz-form-control></nz-form-control>
+          <nz-form-label>
+            Usuário
+          </nz-form-label>
+          <input nz-input formControlName="user" />
+        </div>
+        <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="10">
+          <nz-form-label>
+            Email
+          </nz-form-label>
+          <input nz-input formControlName="email" />
+
+          <nz-form-label>
+            Senha
+          </nz-form-label>
+          <input nz-input formControlName="password" type="password" placeholder="Senha" />
+        </div>
+      </div>
+    </form>
+    <div style="margin-top: 30px;">
+      <button nz-button nzType="primary" (click)="save(form.value)"> Salvar</button>
+      <button nz-button nzType="default" routerLink=".."> Cancelar</button>
+    </div>
+  </nz-tab>
+  <nz-tab nzTitle="Perfil">
+    <div nz-row nzGutter="16">
+      <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="16">
+        <h2>Relacione a um Perfil</h2>
+        <nz-select style="width: 50%;z-index: 999;">
+          <nz-option nzLabel="Perfil" nzValue="Perfil"></nz-option>
+        </nz-select>
+        <button nz-button nzType="primary"><i nz-icon nzType="plus-circle" nzTheme="fill"
+            style="margin: 2px;"></i></button>
+      </div>
+      <div nz-row nzGutter="16">
+        <div nz-col [nzSm]="8" [nzXs]="16" [nzMd]="16" [nzLg]="16">
+          <nz-table width="200" #filterTable [nzData]="" >
+            <tbody>
+              <tr *ngFor="let data of filterTable.data">
+                <td>{{ data.address }}</td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </div>
+      </div>
+    </div>
+  </nz-tab>
+</nz-tabset>
