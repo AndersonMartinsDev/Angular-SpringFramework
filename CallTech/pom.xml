@@ -43,17 +43,14 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-<<<<<<< HEAD:CallTech/pom.xml
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
-=======
-	
+
 			<version>5.1.40</version><!--$NO-MVN-MAN-VER$-->
 			<scope>compile</scope>
->>>>>>> Hibernate avanço:SaveJ/pom.xml
 		</dependency>
 	</dependencies>
 	<build>
