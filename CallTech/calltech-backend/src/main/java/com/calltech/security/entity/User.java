@@ -5,30 +5,64 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
 @Setter
-@Table(name="tb_user")
+@Table(name = "users", uniqueConstraints = {@UniqueConstraint(columnNames = { "username"}),
+        @UniqueConstraint(columnNames = { "email" })})
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column(name="nome_user",length = 100)
+    @NotBlank
+    @Size(min=3, max = 50)
+    @Column(name="nome_user",length = 50)
     private String nome;
 
     @Email
-    @Column(name="email_user",length = 40)
+    @NotBlank
+    @Column(name="email",length = 40)
     private String email;
 
-    @Column(name="user",length = 30)
-    private String user;
+    @NotBlank
+    @Size(min=3, max = 30)
+    @Column(name="username",length = 30)
+    private String username;
 
+    @NotBlank
     @Column(name="password_user",length = 100)
     private String password;
 
-    @OneToMany
-    private List<Perfil> perfis;
+    @Column(name="active_from")
+    private LocalDate active_from;
+
+    @Column(name="profile_photo")
+    private String profile_photo;
+
+    @Column(name="votes")
+    private long votes;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Perfil> perfils = new HashSet<>();
+
+    public User() {}
+
+    public User(String name, String username, String email, String password) {
+        this.nome = name;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
 }
