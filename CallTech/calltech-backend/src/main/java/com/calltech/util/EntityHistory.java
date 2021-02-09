@@ -1,6 +1,6 @@
 package com.calltech.util;
 
-import com.calltech.security.entity.User;
+import com.calltech.security.entity.Usuario;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -23,6 +23,6 @@ public class EntityHistory {
 
     @OneToOne
     @JoinColumn(name="id_user")
-    private User updatedBy;
+    private Usuario updatedBy;
 
 }

@@ -1,7 +1,6 @@
 package com.calltech.security.controller;
 
 import com.calltech.security.entity.Perfil;
-import com.calltech.security.entity.User;
 import com.calltech.security.service.PerfilService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

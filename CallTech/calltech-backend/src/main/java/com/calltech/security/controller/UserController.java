@@ -1,6 +1,6 @@
 package com.calltech.security.controller;
 
-import com.calltech.security.entity.User;
+import com.calltech.security.entity.Usuario;
 import com.calltech.security.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,22 +16,22 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public void inserir(@RequestBody User user){
+    public void inserir(@RequestBody Usuario user){
         userService.inserir(user);
     }
 
     @GetMapping
-    public List<User> listar(){
+    public List<Usuario> listar(){
         return userService.listar();
     }
 
     @DeleteMapping
-    public void excluir(@RequestBody User user){
+    public void excluir(@RequestBody Usuario user){
         userService.excluir(user);
     }
 
     @PostMapping("/atualizar")
-    public void atualizar(@RequestBody User user){
+    public void atualizar(@RequestBody Usuario user){
         userService.atualizar(user);
     }
 

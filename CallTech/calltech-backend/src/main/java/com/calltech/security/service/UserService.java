@@ -1,6 +1,6 @@
 package com.calltech.security.service;
 
-import com.calltech.security.entity.User;
+import com.calltech.security.entity.Usuario;
 import com.calltech.security.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public void inserir(User entity) {
+    public void inserir(Usuario entity) {
         try {
             userRepository.save(entity);
         } catch (Exception e) {
@@ -23,7 +23,7 @@ public class UserService {
         }
     }
 
-    public void excluir(User user) {
+    public void excluir(Usuario user) {
         try {
             userRepository.delete(user);
         } catch (Exception ex) {
@@ -31,11 +31,11 @@ public class UserService {
         }
     }
 
-    public List<User> listar() {
+    public List<Usuario> listar() {
         return userRepository.findAll();
     }
 
-    public void atualizar(User entity) {
+    public void atualizar(Usuario entity) {
         try {
             userRepository.save(entity);
         } catch (Exception e) {

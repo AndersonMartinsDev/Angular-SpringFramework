@@ -1,9 +1,7 @@
 package com.calltech.security.service;
 
 import com.calltech.security.entity.Perfil;
-import com.calltech.security.entity.User;
 import com.calltech.security.repository.PerfilRepository;
-import com.calltech.security.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

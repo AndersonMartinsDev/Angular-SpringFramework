@@ -11,7 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @Table(name="tb_user")
-public class User {
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -30,5 +30,5 @@ public class User {
     private String password;
 
     @OneToMany
-    private List<Perfil> perfis;
+    private List<Perfil> perfil;
 }
