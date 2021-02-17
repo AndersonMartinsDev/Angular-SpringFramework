@@ -4,9 +4,20 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PerfilManterComponent } from './perfil/perfil-manter/perfil-manter.component';
 import { UsuarioManterComponent } from './usuario/usuario-manter/usuario-manter.component';
+import { LoginComponent } from './login/login.component';
+
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/seguranca' },
+  { path: '', pathMatch: 'full', redirectTo: '/seguranca/login' },
+
+  {
+    path: 'login', children: [
+      {
+        path: '',
+        component: LoginComponent
+      }
+    ]
+  },
   {
     path: 'usuario', children: [
       {

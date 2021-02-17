@@ -11,6 +11,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SharedModule } from './shared/shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NzButtonModule } from 'ng-zorro-antd';
+import { AuthService } from './util/services/security/login/auth.service';
 registerLocaleData(pt);
 
 @NgModule({
@@ -18,7 +19,6 @@ registerLocaleData(pt);
     AppComponent
   ],
   imports: [
-    SharedModule,
     AppRoutingModule,
     NgZorroAntdModule,
     BrowserAnimationsModule,
@@ -29,8 +29,8 @@ registerLocaleData(pt);
     ReactiveFormsModule,
     NzCardModule,
   ],
-  exports: [NzButtonModule],
-  providers: [{ provide: NZ_I18N, useValue: pt_BR }],
+  exports: [NzButtonModule,SharedModule],
+  providers: [{ provide: NZ_I18N, useValue: pt_BR },AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
