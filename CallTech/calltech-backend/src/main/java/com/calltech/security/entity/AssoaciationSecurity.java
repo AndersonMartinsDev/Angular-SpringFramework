@@ -2,9 +2,10 @@ package com.calltech.security.entity;
 
 
 import lombok.Getter;
-import org.springframework.context.annotation.Primary;
+import org.hibernate.annotations.CollectionType;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,8 +17,9 @@ public class AssoaciationSecurity {
     private Long id;
     @ManyToOne
     private Perfil perfil;
-    @Enumerated
+
     private PermissoesEnum permissoes;
+
     @Enumerated
     private ModuloEnum modulo;
 
