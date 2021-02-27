@@ -1,23 +1,17 @@
 package com.calltech.security.controller;
 
-import com.calltech.security.entity.ModuloEnum;
-import com.calltech.security.entity.PermissoesEnum;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("${project.version}/seguranca")
 public class SecurityController {
-
-
-    @GetMapping("permissoes")
-    public PermissoesEnum[] permissoes(){
-        return PermissoesEnum.values();
-    }
-
-    @GetMapping("modulos")
-    public ModuloEnum[] modulos(){
-        return ModuloEnum.values();
+    @RequestMapping(value = "/user-auth", method = RequestMethod.GET)
+    @ResponseBody
+    public UserDetails user() {
+        //todo:Converter o userDetails parra um usuário simplificado apenas para enviar para o front os valores de usuários que serão usados
+        return (UserDetails) SecurityContextHolder.getContext()
+                .getAuthentication()
+                .getPrincipal();
     }
 }
