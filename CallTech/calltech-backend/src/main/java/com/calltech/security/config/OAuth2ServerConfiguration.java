@@ -2,7 +2,6 @@ package com.calltech.security.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpMethod;
@@ -19,6 +18,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Configuration
 public class OAuth2ServerConfiguration {
@@ -76,6 +76,7 @@ public class OAuth2ServerConfiguration {
         @Override
         public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
             //TODO:Verificar o tempo correto para que o Token funcione
+            //TODO:Fazer o bind do app.properties trazendo o secret e o clientId de lá
             clients
                     .inMemory()
                     .withClient("client")
@@ -83,9 +84,7 @@ public class OAuth2ServerConfiguration {
                     .refreshTokenValiditySeconds(300000)
                     .resourceIds(RESOURCE_ID)
                     .secret(passwordEncoder.encode("123"))
-                    .accessTokenValiditySeconds(50000)
-            ;
-
+                    .accessTokenValiditySeconds(50000);
         }
 
         @Bean
