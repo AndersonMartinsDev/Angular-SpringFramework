@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { DemandaService } from 'src/app/util/services/demanda/demanda.service';
 import { Demanda } from '../demanda';
-import { Chamado } from 'src/app/util/interface/chamado';
+import { Chamado } from 'src/app/util/commons/chamado';
 
 @Component({
   selector: 'app-chamado-manter',

@@ -19,10 +19,9 @@ export class DemandaService {
     .pipe();
   }
   getDemanda(id: number): Observable<Demanda> {
-    return this.http.get<Demanda>(this.url + '/' + id).pipe(
-    );
+    return this.http.get<Demanda>(this.url + '/' + id);
   }
   salvar(model: Demanda): void {
-    this.http.post(this.url, model);
+    this.http.post(this.url, model).toPromise();
   }
 }

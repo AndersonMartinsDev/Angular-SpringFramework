@@ -1,6 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd';
-import { Chamado } from 'src/app/util/interface/chamado';
+import { Chamado } from 'src/app/util/commons/chamado';
 import { RequestService } from 'src/app/util/services/request-component';
 import { DemandaService } from 'src/app/util/services/demanda/demanda.service';
 import { Demanda } from '../demanda';

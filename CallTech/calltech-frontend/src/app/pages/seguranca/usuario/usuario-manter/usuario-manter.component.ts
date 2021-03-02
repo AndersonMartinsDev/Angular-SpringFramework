@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, RequiredValidator } from '@angular/forms';
 import { SecurityService } from 'src/app/util/services/security/security.service';
 import { Router, RouterLink } from '@angular/router';
-import { Usuario } from 'src/app/util/interface/user';
+import { Usuario } from 'src/app/util/commons/user';
 
 @Component({
   selector: 'app-usuario-manter',

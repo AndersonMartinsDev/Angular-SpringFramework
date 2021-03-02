@@ -22,8 +22,6 @@ export class RequestService {
   }
   post(url: string , model) {
     const link = this.uri + url;
-    this.http.post(link, model).toPromise().then().catch(
-      error
-    );
+    return this.http.post(link, model);
   }
 }

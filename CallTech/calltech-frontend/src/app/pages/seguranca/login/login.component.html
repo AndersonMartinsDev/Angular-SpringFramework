@@ -1,14 +1,10 @@
+
 <div nz-row nzGutter="16">
-    <div nz-col [nzSm]="16" [nzXs]="24" [nzMd]="24" [nzLg]="16">
-        <nz-avatar [nzShape]="'square'" [nzSize]="64" [nzIcon]="'user'"></nz-avatar>
-    </div>
-</div>
-<div nz-row nzGutter="16">
-    <form nz-form class="login-form">
+    <form nz-form class="login-form" [formGroup]="form" (ngSubmit)="entrar()">
         <nz-form-item>
             <nz-form-control>
                 <nz-input-group [nzSuffix]="suffixTemplateInfo" [nzPrefix]="prefixTemplateUser">
-                    <input type="text" nz-input placeholder="Enter your username" />
+                    <input type="text" nz-input placeholder="Enter your username" formControlName="user"/>
                 </nz-input-group>
                 <ng-template #prefixTemplateUser><i nz-icon nzType="user" style="margin-left: 0px"></i></ng-template>
                 <ng-template #suffixTemplateInfo><i nz-icon nz-tooltip nzTitle="Extra information"
@@ -20,7 +16,7 @@
         <nz-form-item>
             <nz-form-control>
                 <nz-input-group [nzSuffix]="suffixTemplate">
-                    <input [type]="passwordVisible ? 'text' : 'password'" nz-input placeholder="senha" />
+                    <input [type]="passwordVisible ? 'text' : 'password'" nz-input placeholder="senha" formControlName="senha"/>
                 </nz-input-group>
                 <ng-template #suffixTemplate>
                     <i nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
@@ -30,7 +26,7 @@
         </nz-form-item>
         <nz-form-item>
             <nz-form-control>
-                <label nz-checkbox formControlName="remember">
+                <label nz-checkbox >
                     <span>Remember me</span>
                 </label>
                 <a class="login-form-forgot" class="login-form-forgot">Forgot password</a>

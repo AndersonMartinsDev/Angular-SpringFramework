@@ -16,6 +16,7 @@ import { SharedModule } from 'src/app/shared/shared/shared.module';
   imports: [
     ChamadoRoutingModule,
     CommonModule,
+    NzFormModule,
     NzTableModule,
     NzModalModule,
     NzButtonModule,

@@ -12,6 +12,7 @@ import { SharedModule } from './shared/shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NzButtonModule } from 'ng-zorro-antd';
 import { AuthService } from './util/services/security/login/auth.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 registerLocaleData(pt);
 
 @NgModule({
@@ -30,7 +31,7 @@ registerLocaleData(pt);
     NzCardModule,
   ],
   exports: [NzButtonModule,SharedModule],
-  providers: [{ provide: NZ_I18N, useValue: pt_BR },AuthService],
+  providers: [{ provide: NZ_I18N, useValue: pt_BR }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

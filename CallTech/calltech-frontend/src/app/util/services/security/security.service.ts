@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Usuario } from '../../interface/user';
+import { Usuario } from '../../commons/user';
 import { RequestService } from '../request-component';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class SecurityService {
   }
 
   inserir(model): void {
-    this.service.post(this.url, model);
+    this.service.post(this.url, model).toPromise();
   }
 
 }
