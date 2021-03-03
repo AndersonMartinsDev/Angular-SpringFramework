@@ -14,7 +14,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name="tb_user")
+@Table(name="tb_usuario")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,7 +27,7 @@ public class Usuario {
     @Column(name="email_user",length = 40)
     private String email;
 
-    @Column(name="user",length = 30)
+    @Column(name="cl_user",length = 30)
     private String user;
 
     @Column(name="password_user",length = 100)
