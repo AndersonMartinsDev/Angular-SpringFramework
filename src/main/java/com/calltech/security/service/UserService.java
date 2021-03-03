@@ -15,6 +15,15 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    public void initCarga(){
+        Usuario usuario = new Usuario();
+        usuario.setPassword("$2a$10$HjroL9f/s3V2/uSvET9DCuXdvryLYRFRmb45l61l4Ukqs//Wiy3Ru");
+        usuario.setEmail("admin@email.com");
+        usuario.setNome("admin");
+        usuario.setUser("admin");
+        userRepository.save(usuario);
+    }
+
     public void inserir(Usuario entity) {
         try {
             userRepository.save(entity);

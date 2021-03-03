@@ -1,5 +1,6 @@
 package com.calltech.security.config;
 
+import com.calltech.security.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,6 +22,8 @@ public class OAuthConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private DetalhesUsuariosServico userDetalhes;
+    @Autowired
+    private UserService service;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -30,6 +33,7 @@ public class OAuthConfig extends WebSecurityConfigurerAdapter {
     @Bean
     @Override
     protected AuthenticationManager authenticationManager() throws Exception {
+        service.initCarga();
         return super.authenticationManager();
     }
 
