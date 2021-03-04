@@ -24,7 +24,7 @@ public class Usuario {
     private String nome;
 
     @Email
-    @Column(name="email_user",length = 40)
+    @Column(name="email_user",length = 40,unique = true)
     private String email;
 
     @Column(name="cl_user",length = 30)
