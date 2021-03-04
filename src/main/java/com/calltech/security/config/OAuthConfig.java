@@ -33,6 +33,7 @@ public class OAuthConfig extends WebSecurityConfigurerAdapter {
     @Bean
     @Override
     protected AuthenticationManager authenticationManager() throws Exception {
+        service.initCarga();
         return super.authenticationManager();
     }
 
